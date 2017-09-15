@@ -1,0 +1,20 @@
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+#./home/hehe/script/bridge.sh
+modprobe bridge
+insmod /home/modbustcp/netfilter/xtmodbusTcp.ko
+insmod /home/DNP3-DPI/netfilter/xtDNP3.ko
+insmod /home/EtherCAT-DPI/netfilter/xtEtherCAT.ko
+insmod /home/OPC-DPI/netfilter/xtOPC.ko
+insmod /home/Profinet-DPI/netfilter/xtProfinet.ko
+exit 0
