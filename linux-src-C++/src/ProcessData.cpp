@@ -132,7 +132,7 @@ int ProcessData::packet_callback(struct nflog_g_handle *gh, struct nfgenmsg *nfm
         string rules;
         bool status = false;
 
-        size_t pos = content.find("!");
+        size_t pos = content.find("*");
         if(pos != string::npos)
             rules = content.substr(0, pos);
         else
